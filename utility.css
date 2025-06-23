@@ -1,0 +1,46 @@
+* {
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    border: 2px solid black;
+}
+
+.fit-height{
+    height: 100%;
+}
+
+.gap-10 {
+    gap:8px;
+}
+
+.relative {
+    position: relative;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.scale-brighten {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.scale-brighten:hover {
+  transform: scale(1.08);
+  filter: brightness(1.4);
+}
