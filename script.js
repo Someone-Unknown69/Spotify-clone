@@ -1,6 +1,6 @@
 import { loadSongs } from "./Album-image-module.js";
 async function getSongs() {
-  let a = await fetch("http://127.0.0.1:3000/songs/");
+  let a = await fetch("https://spotify-clone-alpha-gilt.vercel.app/songs/");
   let response = await a.text();
 
   let div = document.createElement("div");
