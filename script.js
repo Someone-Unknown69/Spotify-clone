@@ -1,23 +1,14 @@
 import { loadSongs } from "./Album-image-module.js";
 async function getSongs() {
-  let a = await fetch("https://spotify-clone-alpha-gilt.vercel.app/songs/");
-  let response = await a.text();
-
-  let div = document.createElement("div");
-  div.innerHTML = response;
-
-  let as = div.getElementsByTagName("a");
-  let songs = [];
-
-  for (let index = 0; index < as.length; index++) {
-    const element = as[index];
-    if (element.href.endsWith(".mp3")) {
-      songs.push(element.href);
-    }
+  try {
+    const response = await fetch("songs.json");
+    const songs = await response.json(); // parse as JSON
+    return songs.filter(song => song.endsWith(".mp3"));
+  } catch (error) {
+    console.error("Failed to load songs.json:", error);
+    return [];
   }
-  return songs;
 }
-
 
 async function main() {
   // Function to format time
